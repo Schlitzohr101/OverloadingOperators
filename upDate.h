@@ -5,8 +5,7 @@ class upDate {
     private:
         int * ptr;
         static int count;
-        
-        void decreaseDate(int);
+
     protected:
         int getDaysInMonth(int);
 
@@ -22,6 +21,7 @@ class upDate {
         int getYear();
         int julian();
         void increaseDate(int);
+        void decreaseDate(int);
         static int GetDateCount();
         std::string getMonthName();
         void operator =(const upDate &);
@@ -31,8 +31,9 @@ class upDate {
         upDate friend operator+(upDate&,int);
         upDate friend operator+(int,upDate&);
         void operator -=(int);
-        upDate operator-(int);
-        int operator-(upDate);
+        upDate friend operator-(upDate&, int);
+        upDate friend operator-(int, upDate&);
+        upDate operator-(upDate);
         upDate operator--(int);
         upDate operator--();
         bool operator==(upDate);

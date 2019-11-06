@@ -193,3 +193,22 @@ void upDate::operator-=(int num) {
     decreaseDate(num);
 }
 
+upDate operator-(upDate& x, int num) {
+    upDate temp = upDate(x);
+    temp.decreaseDate(num);
+    return temp;
+}
+
+upDate operator-(int num, upDate& x) {
+    upDate temp = upDate(x);
+    temp.decreaseDate(num);
+    return temp;
+}
+
+upDate upDate::operator-(upDate temp) {
+    upDate toReturn = upDate(ptr[0],ptr[1],ptr[2]);
+    int daysBetween = julian() - temp.julian();
+    if (daysBetween > 0) {
+        
+    }
+}
